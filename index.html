@@ -1,396 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nobuhiro Tanno, M.D., Ph.D.</title>
-  <style>
-    :root {
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --accent: #0f766e;
-      --accent-soft: #ecfeff;
-      --max-width: 920px;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nobuhiro Tanno, M.D., Ph.D.</title>
+    <style>
+        :root {
+            --text: #1f2937;
+            --muted: #6b7280;
+            --line: #e5e7eb;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --accent: #0f766e;
+            --accent-soft: #ecfeff;
+            --max-width: 920px;
+        }
 
-    * {
-      box-sizing: border-box;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.7;
-      color: var(--text);
-      background: var(--bg);
-    }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+        }
 
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 48px 24px 72px;
-    }
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 48px 24px 72px;
+        }
 
-    .hero {
-      background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 40px 32px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
-    }
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 40px 32px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+        }
 
-    h1 {
-      margin: 0 0 12px 0;
-      font-size: 2.5rem;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-    }
+        h1 {
+            margin: 0 0 12px 0;
+            font-size: 2.5rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
 
-    .subtitle {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin: 0 0 16px 0;
-    }
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 0 0 16px 0;
+        }
 
-    .intro {
-      font-size: 1.05rem;
-      color: var(--text);
-      max-width: 760px;
-      margin: 0;
-    }
+        .intro {
+            font-size: 1.05rem;
+            color: var(--text);
+            max-width: 760px;
+            margin: 0;
+        }
 
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-    }
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
 
-    .button {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--text);
-      transition: 0.2s ease;
-    }
+        .button {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--text);
+            transition: 0.2s ease;
+        }
 
-    .button:hover {
-      transform: translateY(-1px);
-      border-color: #cbd5e1;
-    }
+        .button:hover {
+            transform: translateY(-1px);
+            border-color: #cbd5e1;
+        }
 
-    .button.primary {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
+        .button.primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
 
-    section {
-      margin-top: 44px;
-    }
+        section {
+            margin-top: 44px;
+        }
 
-    h2 {
-      font-size: 1.5rem;
-      margin: 0 0 16px 0;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--line);
-      letter-spacing: -0.01em;
-    }
+        h2 {
+            font-size: 1.5rem;
+            margin: 0 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--line);
+            letter-spacing: -0.01em;
+        }
 
-    p {
-      margin: 0 0 16px 0;
-    }
+        p {
+            margin: 0 0 16px 0;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 22px 20px;
-      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
-    }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 22px 20px;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
+        }
 
-    .card h3 {
-      margin: 0 0 10px 0;
-      font-size: 1.08rem;
-      line-height: 1.35;
-    }
+        .card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.08rem;
+            line-height: 1.35;
+        }
 
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 12px;
-    }
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent);
+            background: var(--accent-soft);
+            padding: 4px 10px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+        }
 
-    ul {
-      margin: 0;
-      padding-left: 20px;
-    }
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
 
-    li {
-      margin-bottom: 8px;
-    }
+        li {
+            margin-bottom: 8px;
+        }
 
-    .highlight {
-      background: #ffffff;
-      border-left: 4px solid var(--accent);
-      padding: 18px 18px 18px 20px;
-      border-radius: 12px;
-      border-top: 1px solid var(--line);
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
+        .highlight {
+            background: #ffffff;
+            border-left: 4px solid var(--accent);
+            padding: 18px 18px 18px 20px;
+            border-radius: 12px;
+            border-top: 1px solid var(--line);
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
 
-    .experience-list {
-      display: grid;
-      gap: 16px;
-    }
+        .experience-list {
+            display: grid;
+            gap: 16px;
+        }
 
-    .experience-item {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 18px 20px;
-    }
+        .experience-item {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 18px 20px;
+        }
 
-    .experience-item h3 {
-      margin: 0 0 4px 0;
-      font-size: 1.05rem;
-    }
+        .experience-item h3 {
+            margin: 0 0 4px 0;
+            font-size: 1.05rem;
+        }
 
-    .meta {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-    }
+        .meta {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-    .skill {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 14px;
-      font-size: 0.95rem;
-    }
+        .skill {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: 0.95rem;
+        }
 
-    .contact-box {
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 24px 22px;
-    }
+        .contact-box {
+            background: #ffffff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 24px 22px;
+        }
 
-    .contact-box a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+        .contact-box a {
+            color: var(--accent);
+            text-decoration: none;
+        }
 
-    .contact-box a:hover {
-      text-decoration: underline;
-    }
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
 
-    footer {
-      margin-top: 48px;
-      color: var(--muted);
-      font-size: 0.92rem;
-      text-align: center;
-    }
+        footer {
+            margin-top: 48px;
+            color: var(--muted);
+            font-size: 0.92rem;
+            text-align: center;
+        }
 
-    @media (max-width: 760px) {
-      .container {
-        padding: 28px 16px 56px;
-      }
+        @media (max-width: 760px) {
+            .container {
+                padding: 28px 16px 56px;
+            }
 
-      .hero {
-        padding: 28px 20px;
-      }
+            .hero {
+                padding: 28px 20px;
+            }
 
-      h1 {
-        font-size: 2rem;
-      }
+            h1 {
+                font-size: 2rem;
+            }
 
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <header class="hero">
-      <h1>Nobuhiro Tanno, M.D., Ph.D.</h1>
-      <p class="subtitle">Connecting science, medicine, and society to accelerate real-world impact</p>
-      <p class="intro">
-        I am a physician-scientist and ecosystem builder with a multidisciplinary background spanning pediatric hematology/oncology, pathology, internal medicine, geriatrics, translational research, and oncology-focused strategy. My work is driven by a central mission: to help scientific innovation move beyond discovery and create meaningful impact for patients and society.
-      </p>
-      <div class="hero-links">
-        <a class="button primary" href="mailto:gift.of.magi.2007@gmail.com">Email Me</a>
-        <a class="button" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-    </header>
+    <div class="container">
+        <header class="hero">
+            <h1>Nobuhiro Tanno, M.D., Ph.D.</h1>
+            <p class="subtitle">Connecting science, medicine, and society to accelerate real-world impact</p>
+            <p class="intro">
+                I am a physician-scientist and ecosystem builder with a multidisciplinary background spanning pediatric
+                hematology/oncology, pathology, internal medicine, geriatrics, translational research, and
+                oncology-focused strategy. My work is driven by a central mission: to help scientific innovation move
+                beyond discovery and create meaningful impact for patients and society.
+            </p>
+            <div class="hero-links">
+                <a class="button primary" href="mailto:gift.of.magi.2007@gmail.com">Email Me</a>
+                <a class="button" href="https://www.linkedin.com/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </header>
 
-    <section>
-      <h2>About</h2>
-      <p>
-        Through clinical practice, research, and strategic analysis, I have seen that breakthroughs alone are not enough. Real impact depends on how effectively science connects with healthcare systems, industry, policy, and investment communities.
-      </p>
-      <p>
-        I am particularly interested in roles and collaborations at the intersection of healthcare innovation, cross-sector ecosystem building, venture and investment, philanthropy, and translational strategy.
-      </p>
-      <div class="highlight">
-        My focus is on building bridges across academia, healthcare, industry, government, and venture so that promising ideas can move faster toward real-world implementation.
-      </div>
-    </section>
+        <section>
+            <h2>About</h2>
 
-    <section>
-      <h2>What I Do</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Build cross-sector ecosystems</h3>
-          <p>
-            I design and support networks that connect researchers, clinicians, founders, funders, and public-sector stakeholders.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Translate science into strategy</h3>
-          <p>
-            I synthesize clinical, scientific, and market information into clear frameworks that support decisions and collaboration.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Bridge discovery and implementation</h3>
-          <p>
-            I work across research, medicine, and innovation to help move ideas closer to practical and societal impact.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Connect global stakeholders</h3>
-          <p>
-            I bring together people and organizations across geographies and sectors to accelerate shared learning and action.
-          </p>
-        </div>
-      </div>
-    </section>
+<p>
+I am a physician-scientist (M.D., Ph.D.) with a multidisciplinary clinical background spanning pediatric hematology/oncology, pathology, internal medicine, and geriatrics, combined with experience in translational research and strategic analysis in healthcare.
+</p>
 
-    <section>
-      <h2>Featured Work</h2>
+<p>
+This diverse background allows me to integrate perspectives across disease biology, clinical practice, and healthcare systems, enabling interpretation of scientific evidence within real-world clinical and population contexts.
+</p>
 
-      <div class="card" style="margin-bottom: 18px;">
-        <div class="eyebrow">Flagship Initiative</div>
-        <h3>Science to Society Hub (SSH) — Founder</h3>
-        <p>
-          Science to Society Hub is a global initiative created to accelerate the translation of scientific innovation into societal impact.
-        </p>
-        <ul>
-          <li>Built a cross-sector platform connecting academia, healthcare, industry, venture, and government</li>
-          <li>Organized international sessions with more than 200 participants across global communities</li>
-          <li>Engaged government stakeholders and corporate partners to support ecosystem growth</li>
-          <li>Expanding SSH as a platform for cross-border collaboration and innovation dialogue</li>
-        </ul>
-      </div>
+<p>
+In addition to my clinical and research experience, I founded Science to Society Hub (SSH), a global initiative aimed at accelerating the translation of scientific innovation into societal impact by connecting stakeholders across academia, healthcare, industry, government, and venture.
+</p>
 
-      <div class="card">
-        <div class="eyebrow">Leadership</div>
-        <h3>United Japanese Researchers Around the World (UJA) — Board Director</h3>
-        <p>
-          I serve on the board of a global network of more than 6,000 members across academia, industry, and public-sector organizations.
-        </p>
-        <ul>
-          <li>Support international community building and knowledge exchange</li>
-          <li>Strengthen connections across research, healthcare, and innovation communities</li>
-          <li>Contribute to strategic initiatives that expand global engagement</li>
-        </ul>
-      </div>
-    </section>
+<div class="highlight">
+My work focuses on bridging gaps between science, medicine, and society to accelerate the delivery of impactful solutions to patients and populations.
+</div>
+        </section>
 
-    <section>
-      <h2>Selected Experience</h2>
-      <p>
-        My background combines medicine, research, and strategic consulting, giving me a broad perspective across the healthcare innovation landscape.
-      </p>
+        <section>
+            <h2>What I Do</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Build cross-sector ecosystems</h3>
+                    <p>
+                        I design and support networks that connect researchers, clinicians, founders, funders, and
+                        public-sector stakeholders.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Translate science into strategy</h3>
+                    <p>
+                        I synthesize clinical, scientific, and market information into clear frameworks that support
+                        decisions and collaboration.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Bridge discovery and implementation</h3>
+                    <p>
+                        I work across research, medicine, and innovation to help move ideas closer to practical and
+                        societal impact.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Connect global stakeholders</h3>
+                    <p>
+                        I bring together people and organizations across geographies and sectors to accelerate shared
+                        learning and action.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-      <div class="experience-list">
-        <div class="experience-item">
-          <h3>Memorial Sloan Kettering Cancer Center</h3>
-          <div class="meta">Physician-Scientist, Translational Oncology</div>
-          <p>
-            Conducted translational research in tumor immunity and programmed cell death, with a focus on connecting scientific findings to therapeutic relevance and broader clinical context.
-          </p>
-        </div>
+        <section>
+            <h2>Featured Work</h2>
 
-        <div class="experience-item">
-          <h3>LinkMed</h3>
-          <div class="meta">Strategic Research Consultant (Oncology)</div>
-          <p>
-            Performed U.S. oncology landscape, clinical feasibility, and strategic analysis in glioblastoma to inform development planning, external engagement, and expansion strategy.
-          </p>
-        </div>
+            <div class="card" style="margin-bottom: 18px;">
+                <div class="eyebrow">Flagship Initiative</div>
+                <h3>Science to Society Hub (SSH) — Founder</h3>
+                <p>
+                    Science to Society Hub is a global initiative created to accelerate the translation of scientific
+                    innovation into societal impact.
+                </p>
+                <ul>
+                    <li>Built a cross-sector platform connecting academia, healthcare, industry, venture, and government
+                    </li>
+                    <li>Organized international sessions with more than 200 participants across global communities</li>
+                    <li>Engaged government stakeholders and corporate partners to support ecosystem growth</li>
+                    <li>Expanding SSH as a platform for cross-border collaboration and innovation dialogue</li>
+                </ul>
+            </div>
 
-        <div class="experience-item">
-          <h3>Clinical Practice</h3>
-          <div class="meta">Pediatric Oncology / Internal Medicine / Geriatrics / Pathology</div>
-          <p>
-            Built a multidisciplinary clinical foundation across the lifespan, providing a practical understanding of disease, patient care, and real-world healthcare delivery.
-          </p>
-        </div>
-      </div>
-    </section>
+            <div class="card">
+                <div class="eyebrow">Leadership</div>
+                <h3>United Japanese Researchers Around the World (UJA) — Board Director</h3>
+                <p>
+                    I serve on the board of a global network of more than 6,000 members across academia, industry, and
+                    public-sector organizations.
+                </p>
+                <ul>
+                    <li>Support international community building and knowledge exchange</li>
+                    <li>Strengthen connections across research, healthcare, and innovation communities</li>
+                    <li>Contribute to strategic initiatives that expand global engagement</li>
+                </ul>
+            </div>
+        </section>
 
-    <section>
-      <h2>Areas of Expertise</h2>
-      <div class="skills">
-        <span class="skill">Health Innovation &amp; Ecosystem Building</span>
-        <span class="skill">Cross-Sector Collaboration</span>
-        <span class="skill">Strategic Analysis</span>
-        <span class="skill">Translational Science</span>
-        <span class="skill">Scientific Communication</span>
-        <span class="skill">Oncology &amp; Clinical Insight</span>
-        <span class="skill">Stakeholder Engagement</span>
-        <span class="skill">Global Network Development</span>
-      </div>
-    </section>
+        <section>
+            <h2>Selected Experience</h2>
+            <p>
+                My background combines medicine, research, and strategic consulting, giving me a broad perspective
+                across the healthcare innovation landscape.
+            </p>
 
-    <section>
-      <h2>Contact</h2>
-      <div class="contact-box">
-        <p><strong>Email:</strong> <a href="mailto:gift.of.magi.2007@gmail.com">gift.of.magi.2007@gmail.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Add your LinkedIn profile URL here</a></p>
-        <p>
-          I welcome conversations about healthcare innovation, strategy, collaboration, philanthropy, venture, and ecosystem building.
-        </p>
-      </div>
-    </section>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <h3>Memorial Sloan Kettering Cancer Center</h3>
+                    <div class="meta">Physician-Scientist, Translational Oncology</div>
+                    <p>
+                        Conducted translational research in tumor immunity and programmed cell death, with a focus on
+                        connecting scientific findings to therapeutic relevance and broader clinical context.
+                    </p>
+                </div>
 
-    <footer>
-      © Nobuhiro Tanno. All rights reserved.
-    </footer>
-  </div>
+                <div class="experience-item">
+                    <h3>LinkMed</h3>
+                    <div class="meta">Strategic Research Consultant (Oncology)</div>
+                    <p>
+                        Performed U.S. oncology landscape, clinical feasibility, and strategic analysis in glioblastoma
+                        to inform development planning, external engagement, and expansion strategy.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Clinical Practice</h3>
+                    <div class="meta">Pediatric Oncology / Internal Medicine / Geriatrics / Pathology</div>
+                    <p>
+                        Built a multidisciplinary clinical foundation across the lifespan, providing a practical
+                        understanding of disease, patient care, and real-world healthcare delivery.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Areas of Expertise</h2>
+            <div class="skills">
+                <span class="skill">Health Innovation &amp; Ecosystem Building</span>
+                <span class="skill">Cross-Sector Collaboration</span>
+                <span class="skill">Strategic Analysis</span>
+                <span class="skill">Translational Science</span>
+                <span class="skill">Scientific Communication</span>
+                <span class="skill">Oncology &amp; Clinical Insight</span>
+                <span class="skill">Stakeholder Engagement</span>
+                <span class="skill">Global Network Development</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <div class="contact-box">
+                <p><strong>Email:</strong> <a href="mailto:gift.of.magi.2007@gmail.com">gift.of.magi.2007@gmail.com</a>
+                </p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nobuhiro-tanno-md-phd-0949585b/"
+                        target="_blank" rel="noopener noreferrer">Add your LinkedIn profile URL here</a></p>
+                <p>
+                    I welcome conversations about healthcare innovation, strategy, collaboration, philanthropy, venture,
+                    and ecosystem building.
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            © Nobuhiro Tanno. All rights reserved.
+        </footer>
+    </div>
 </body>
+
 </html>
